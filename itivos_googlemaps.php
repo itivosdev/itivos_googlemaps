@@ -27,7 +27,7 @@ class ItivosGoogleMaps extends modules
     {
     	 if(!$this->registerHook("displayFrontHead") ||
             !$this->registerHook("displayFrontBottom") ||
-            !$this->registerHook("displayFrontHomeTop") ||
+            !$this->registerHook("displayFrontBeforeFooterContact") ||
             !$this->defaultData() 
             ){
             return false;
@@ -90,7 +90,7 @@ class ItivosGoogleMaps extends modules
             );
         return $form;
     }
-    public function hookDisplayFrontHomeTop($params = null)
+    public function hookDisplayFrontBeforeFooterContact($params = null)
     {
     	$uri_map = Configuration::getValue('itivos_googlemaps_uri');
         $this->view->assign("itivos_googlemaps_uri", $uri_map);
